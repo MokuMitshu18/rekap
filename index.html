@@ -1,61 +1,27 @@
-<!DOCTYPE html><html lang='id'><head><meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
-<title>Rekap Karta II</title>
-<style>
-body {font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #f1f5f9; margin: 0; padding: 0}
-.container {max-width: 960px; margin: auto; padding: 20px}
-pre.banner-h1 {
-  font-family: 'Courier New', monospace;
-  font-weight: bold;
-  font-size: 0.9rem;
-  color: #facc15;
-  white-space: pre;
-  text-align: center;
-  user-select: none;
-  margin: 0 0 20px 0;
-}
-h2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: clamp(1.5rem, 4vw, 2.4rem);
-  user-select: none;
-  margin: 40px 0 10px 0;
-  padding: 0 10px;
-  color: #facc15;
-  animation: fadezoom 1s ease;
-}
-h2 span {
-  font-size: 1.8em;
-}
-table {width: 100%; border-collapse: collapse; margin-top: 10px; background: #1e293b; border-radius: 6px; overflow: hidden; animation: fadein 1s ease}
-th, td {padding: 10px; text-align: center; border-bottom: 1px solid #334155; transition: background 0.3s ease}
-tr:hover {background-color: #334155}
-tr:nth-child(even) {background: #0f172a}
-.total {margin-top: 10px; text-align: center; font-weight: bold; color: #facc15; animation: fadein 1s ease}
-select {padding: 12px; margin: 20px auto; display: block; width: 100%; background: #0f172a; color: #f1f5f9; border: 2px solid #334155; border-radius: 6px; font-size: 1em}
-.footer {text-align: center; margin-top: 50px; font-size: 0.9em; color: #94a3b8; animation: fadein 2s ease}
-@keyframes fadein { from {opacity: 0;} to {opacity: 1;} }
-@keyframes fadezoom { from {opacity: 0; transform: scale(0.95);} to {opacity: 1; transform: scale(1);} }
+<!DOCTYPE html><html><head><meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Rekap Pemasukan</title><style>
+body{font-family:sans-serif;background:#0f172a;color:#f1f5f9;padding:20px}
+h1{text-align:center;margin-bottom:10px}
+h2{margin-top:30px;color:#facc15;text-transform:capitalize}
+table{width:100%;border-collapse:collapse;margin-top:10px;background:#1e293b;border-radius:6px;overflow:hidden}
+th,td{padding:8px;border-bottom:1px solid #334155;text-align:center}
+tr:nth-child(even){background:#0f172a}
+.total{margin-top:5px;font-weight:bold;color:#facc15}
+select{padding:10px;margin:20px auto;display:block;width:100%;max-width:300px;background:#0f172a;color:#f1f5f9;border:2px solid #334155;border-radius:6px}
+.footer{text-align:center;margin-top:40px;color:#94a3b8;font-size:0.9em}
 </style>
 <script>
 function filterOrang() {
   const v = document.getElementById('orangFilter').value;
-  document.querySelectorAll('.orang-section').forEach(s => s.style.display = (v === '' || s.id === v) ? 'block' : 'none');
+  document.querySelectorAll('.orang-section').forEach(div => {
+    div.style.display = (v === '' || div.id === v) ? 'block' : 'none';
+  });
 }
-window.onload = () => { document.getElementById('loading')?.remove(); };
-</script>
-</head><body>
-<div class='container'>
-<pre class='banner-h1'> ____  _____ _  __    _    ____    _  __    _    ____ _____  _      ___ ___ 
-|  _ \| ____| |/ /   / \  |  _ \  | |/ /   / \  |  _ \_   _|/ \    |_ _|_ _|
-| |_) |  _| | ' /   / _ \ | |_) | | ' /   / _ \ | |_) || | / _ \    | | | | 
-|  _ <| |___| . \  / ___ \|  __/  | . \  / ___ \|  _ < | |/ ___ \   | | | | 
-|_| \_\_____|_|\_\/_/   \_\_|     |_|\_\/_/   \_\_| \_\|_|_/   \_\ |___|___|
-</pre>
-<h2><span>👤</span><span>👤</span></h2>
+</script></head><body>
+<h1>📊 Rekap Pemasukan</h1>
 <select id='orangFilter' onchange='filterOrang()'>
-<option value=''>🔎 Tampilkan Semua</option>
+<option value=''>🔍 Tampilkan Semua</option>
 <option value='ahmad'>Ahmad</option>
 <option value='dimas'>Dimas</option>
 <option value='sugianto'>Sugianto</option>
@@ -63,60 +29,60 @@ window.onload = () => { document.getElementById('loading')?.remove(); };
 <option value='zakaria'>Zakaria</option>
 </select>
 <div class='orang-section' id='ahmad'>
-<h2><span>👤</span><span>👤</span></h2>
-<table>
-<tr><th>No</th><th>Tanggal</th><th>PCS</th><th>Jumlah</th></tr>
+<h2>👤 ahmad</h2>
+<table><tr><th>No</th><th>Tanggal</th><th>PCS</th><th>Jumlah</th></tr>
 <tr><td>1</td><td>Kamis, 24-07-2025</td><td>7.100 PCS</td><td>Rp30.175,00</td></tr>
 <tr><td>2</td><td>Jumat, 25-07-2025</td><td>3.800 PCS</td><td>Rp16.150,00</td></tr>
 <tr><td>3</td><td>Senin, 28-07-2025</td><td>10.300 PCS</td><td>Rp43.775,00</td></tr>
 <tr><td>4</td><td>Selasa, 29-07-2025</td><td>2.520 PCS</td><td>Rp10.710,00</td></tr>
 <tr><td>5</td><td>Rabu, 30-07-2025</td><td>10.180 PCS</td><td>Rp43.265,00</td></tr>
 </table>
-<p class='total'>📦 Total PCS: 33.900 | 💰 Total: Rp144.075,00</p></div>
+<p class='total'>📦 Total PCS: 33.900 | 💰 Total: Rp144.075</p>
+</div>
 <div class='orang-section' id='dimas'>
-<h2><span>👤</span><span>👤</span></h2>
-<table>
-<tr><th>No</th><th>Tanggal</th><th>PCS</th><th>Jumlah</th></tr>
+<h2>👤 dimas</h2>
+<table><tr><th>No</th><th>Tanggal</th><th>PCS</th><th>Jumlah</th></tr>
 <tr><td>1</td><td>Kamis, 24-07-2025</td><td>15.452 PCS</td><td>Rp65.671,00</td></tr>
 <tr><td>2</td><td>Jumat, 25-07-2025</td><td>17.315 PCS</td><td>Rp73.588,75</td></tr>
 <tr><td>3</td><td>Senin, 28-07-2025</td><td>2.200 PCS</td><td>Rp9.350,00</td></tr>
 <tr><td>4</td><td>Selasa, 29-07-2025</td><td>5.300 PCS</td><td>Rp22.525,00</td></tr>
 </table>
-<p class='total'>📦 Total PCS: 40.267 | 💰 Total: Rp171.134,75</p></div>
+<p class='total'>📦 Total PCS: 40.267 | 💰 Total: Rp171.134</p>
+</div>
 <div class='orang-section' id='sugianto'>
-<h2><span>👤</span><span>👤</span></h2>
-<table>
-<tr><th>No</th><th>Tanggal</th><th>PCS</th><th>Jumlah</th></tr>
+<h2>👤 sugianto</h2>
+<table><tr><th>No</th><th>Tanggal</th><th>PCS</th><th>Jumlah</th></tr>
 <tr><td>1</td><td>Kamis, 24-07-2025</td><td>28.400 PCS</td><td>Rp120.700,00</td></tr>
 <tr><td>2</td><td>Jumat, 25-07-2025</td><td>19.815 PCS</td><td>Rp84.213,75</td></tr>
 <tr><td>3</td><td>Senin, 28-07-2025</td><td>7.720 PCS</td><td>Rp32.810,00</td></tr>
 <tr><td>4</td><td>Selasa, 29-07-2025</td><td>10.190 PCS</td><td>Rp43.307,50</td></tr>
 <tr><td>5</td><td>Rabu, 30-07-2025</td><td>11.150 PCS</td><td>Rp47.387,50</td></tr>
 </table>
-<p class='total'>📦 Total PCS: 77.275 | 💰 Total: Rp328.418,75</p></div>
+<p class='total'>📦 Total PCS: 77.275 | 💰 Total: Rp328.418</p>
+</div>
 <div class='orang-section' id='umar'>
-<h2><span>👤</span><span>👤</span></h2>
-<table>
-<tr><th>No</th><th>Tanggal</th><th>PCS</th><th>Jumlah</th></tr>
+<h2>👤 umar</h2>
+<table><tr><th>No</th><th>Tanggal</th><th>PCS</th><th>Jumlah</th></tr>
 <tr><td>1</td><td>Kamis, 24-07-2025</td><td>20.901 PCS</td><td>Rp88.829,25</td></tr>
 <tr><td>2</td><td>Jumat, 25-07-2025</td><td>7.207 PCS</td><td>Rp30.629,75</td></tr>
 <tr><td>3</td><td>Senin, 28-07-2025</td><td>10.000 PCS</td><td>Rp42.500,00</td></tr>
 <tr><td>4</td><td>Selasa, 29-07-2025</td><td>3.400 PCS</td><td>Rp14.450,00</td></tr>
 <tr><td>5</td><td>Rabu, 30-07-2025</td><td>8.254 PCS</td><td>Rp35.079,50</td></tr>
+<tr><td>6</td><td>Kamis, 31-07-2025</td><td>600 PCS</td><td>Rp2.550</td></tr>
 </table>
-<p class='total'>📦 Total PCS: 49.762 | 💰 Total: Rp211.488,50</p></div>
+<p class='total'>📦 Total PCS: 50.362 | 💰 Total: Rp214.038</p>
+</div>
 <div class='orang-section' id='zakaria'>
-<h2><span>👤</span><span>👤</span></h2>
-<table>
-<tr><th>No</th><th>Tanggal</th><th>PCS</th><th>Jumlah</th></tr>
+<h2>👤 zakaria</h2>
+<table><tr><th>No</th><th>Tanggal</th><th>PCS</th><th>Jumlah</th></tr>
 <tr><td>1</td><td>Jumat, 25-07-2025</td><td>53.400 PCS</td><td>Rp226.950,00</td></tr>
 <tr><td>2</td><td>Senin, 28-07-2025</td><td>44.840 PCS</td><td>Rp190.570,00</td></tr>
 <tr><td>3</td><td>Selasa, 29-07-2025</td><td>14.000 PCS</td><td>Rp59.500,00</td></tr>
 <tr><td>4</td><td>Rabu, 30-07-2025</td><td>31.824 PCS</td><td>Rp135.252,00</td></tr>
 </table>
-<p class='total'>📦 Total PCS: 144.064 | 💰 Total: Rp612.272,00</p></div>
-<hr style='margin-top:40px; border-color:#334155'>
-<h2>📊 Total Semua Orang</h2>
-<p class='total'>📦 Semua PCS: 345.268 | 💰 Total Semua: Rp1.467.389,00</p>
-<p class='footer'>Website created by <span style='color:#facc15;'>Moku Mitshu</span></p>
-</div></body></html>
+<p class='total'>📦 Total PCS: 144.064 | 💰 Total: Rp612.272</p>
+</div>
+<hr><h2>🔁 Total Semua</h2>
+<p class='total'>📦 345.868 | 💰 Rp1.469.939</p>
+<p class='footer'>By <b>Moku Mitshu</b></p>
+</body></html>
